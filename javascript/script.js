@@ -1,10 +1,11 @@
 const palavras = ["CATAR", "EQUADOR", "SENEGAL", "HOLANDA", "INGLATERRA", "IRA", "GALES", "ARGENTINA", "ARABIA SAUDITA", "MEXICO", "POLONIA", "FRANCA", "AUSTRALIA", "DINAMARCA", "TUNISIA", "ESPANHA", "COSTA RICA", "ALEMANHA", "JAPAO", "BELGICA", "CANADA", "MARROCOS", "CROACIA", "BRASIL", "SERVIA", "SUICA", "CAMAROES", "PORTUGAL", "GANE", "URUGUAI"]
 const textarea = document.querySelector('textarea')
 const buttons = document.querySelectorAll('.btn')
-const confirmar_btn = document.querySelector('.confirmar')
-const delete_btn = document.querySelector('.deletar')
+const confirmarBto = document.querySelector('.confirmar')
+const deletarBto = document.querySelector('.deletar')
+const forcaImagem = document.querySelector('#forca')
 let palavraForca;
-let tentativas = 8;
+let tentativas = 1;
 let tmp = [];
 
 buttons.forEach(btn => {
@@ -15,11 +16,11 @@ buttons.forEach(btn => {
     })
 })
 
-delete_btn.addEventListener('click', () => {
+deletarBto.addEventListener('click', () => {
     textarea.value = ''
 })
 
-confirmar_btn.addEventListener('click', () => {
+confirmarBto.addEventListener('click', () => {
     verificaLetra(textarea.value)
     textarea.value = ''
 })
@@ -38,7 +39,6 @@ function selecionaSelecao() {
 
 function verificaLetra(letra) {
     document.getElementById(letra).disabled = true;
-
     if (palavraForca.includes(letra)) {
         document.getElementById(letra).style.background = "#32CD32";
         for (i = 0; i < palavraForca.length; i++) {
@@ -54,13 +54,14 @@ function verificaLetra(letra) {
 }
 
 function verificaStatusGame() {
-    tentativas--;
-    if (tentativas == 0) {
-        var resposta = confirm("Infelizmente, você perdeu =(. Tente novamente")
+    tentativas++;
+    forcaImagem.setAttribute('src','img/forca'+tentativas+'.png')
+    if (tentativas == 9) {
+        var resposta = confirm("Infelizmente, você perdeu =(\nOK - JOGAR NOVAMENTE | CANCELAR - SAIR DO JOGO")
         if (resposta) {
             location.reload();
         } else {
-            window.location.replace('Login.html')
+            window.close();
         }
     }
 }
@@ -70,5 +71,17 @@ function apareceLetra() {
     palavraJogo.innerHTML = "";
     for (i = 0; i < palavraForca.length; i++) {
         palavraJogo.innerHTML = palavraJogo.innerHTML + "<div class='letra'>" + tmp[i] + "</div>"
+    }
+    if(!tmp.includes("&nbsp;")){
+        palavraCompleta();
+    }
+}
+
+function palavraCompleta(){
+    var resposta = confirm("Parabéns, você ganhou =)\nOK - JOGAR NOVAMENTE | CANCELAR - SAIR DO JOGO")
+    if (resposta) {
+        location.reload();
+    } else {
+        window.close();
     }
 }
