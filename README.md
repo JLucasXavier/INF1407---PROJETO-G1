@@ -12,7 +12,7 @@ Desenvolvemos o clássico jogo da forca, que consiste em falar letras do alfabet
 
 # Requisitos pedidos para o jogo
 
- <br/> :heavy_check_mark: Pedir a identificação do usuário no formato de email utilizado em Priplanus e somente permitir ao jogador jogar se o email for válido (ver apêndice sobre o formato de email em Priplanus)
+  :heavy_check_mark: Pedir a identificação do usuário no formato de email utilizado em Priplanus e somente permitir ao jogador jogar se o email for válido (ver apêndice sobre o formato de email em Priplanus)
  <br/> :heavy_check_mark: Implemente a validação utilizando (também) uma expressão regular 
  <br/> :heavy_check_mark: Manipular no mínimo dois objetos do tipo imagem com duas imagens diferentes em cada objeto. 
  <br/> :heavy_check_mark: Ter no mínimo um array. 
