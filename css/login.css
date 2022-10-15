@@ -1,0 +1,65 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(29, 66, 87);
+
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.card {
+    background-color: rgb(2, 44, 67);
+    padding: 40px;
+    border-radius: 2px;
+    width:280px;
+}
+
+.card-header {
+    padding-bottom: 20px;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.card-header::after {
+    content: "";
+    width: 70px;
+    height: 1px;
+    background-color: #fff;
+    display: block;
+    margin-top: -17px;
+    margin-left: 5px;
+}
+
+label{
+    font-size: 18px;
+    color: white;
+    margin: 5px;
+}
+
+input {
+    background-color: transparent;
+    margin: 5px;
+    font-size: 15px;
+    color: white;
+    width: 200px;
+    height: 20px;
+}
+
+button {
+    background-color: rgb(2, 44, 67);
+    padding: 8px 2px;
+    margin: 5px;
+    font-size: 18px;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border:solid 1px;
+    border-radius:20px;
+
+}

@@ -60,7 +60,7 @@ function verificaStatusGame() {
         if (resposta) {
             location.reload();
         } else {
-            close();
+            window.location.replace('Login.html')
         }
     }
 }
