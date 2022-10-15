@@ -61,7 +61,7 @@ function verificaStatusGame() {
         if (resposta) {
             location.reload();
         } else {
-            window.close();
+            window.location.replace('Login.html')
         }
     }
 }
@@ -82,6 +82,6 @@ function palavraCompleta(){
     if (resposta) {
         location.reload();
     } else {
-        window.close();
+        window.location.replace('Login.html')
     }
 }
