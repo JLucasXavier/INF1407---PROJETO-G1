@@ -1,4 +1,4 @@
-const re = /(\\((b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|x|w|y|z)+\[((b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|x|w|y|z)+\|)+(b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|x|w|y|z)+]))/
+const re = /(^\\((b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|x|w|y|z)+\[((b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|x|w|y|z)+\|)+(b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|x|w|y|z)+]))/
 
 onload = function(){
     this.document.getElementById("singinUsername").addEventListener("click", verifyUser)
