@@ -1,5 +1,8 @@
 RELATÓRIO
 
+link relatorio docs:
+https://docs.google.com/document/d/10NuULodp2TPKBNid_ixK9k-f_-ahR9spgRuNrKvKkwg/edit?usp=sharing
+
 Alexandre R. Bomfim Jr. - 1921241
 José Lucas Teixeira Xavier - 1921254
 
