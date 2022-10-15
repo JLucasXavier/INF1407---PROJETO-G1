@@ -10,7 +10,7 @@ function verifyUser() {
     if (!re.test(user)){
         alert("Login errado!")
     }else{
-        window.open('game.html')
+        window.location.replace('Game.html')
     }
     console.log(user)
 }
