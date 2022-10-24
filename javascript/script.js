@@ -1,9 +1,10 @@
-const palavras = ["CATAR", "EQUADOR", "SENEGAL", "HOLANDA", "INGLATERRA", "IRA", "GALES", "ARGENTINA", "ARABIA SAUDITA", "MEXICO", "POLONIA", "FRANCA", "AUSTRALIA", "DINAMARCA", "TUNISIA", "ESPANHA", "COSTA RICA", "ALEMANHA", "JAPAO", "BELGICA", "CANADA", "MARROCOS", "CROACIA", "BRASIL", "SERVIA", "SUICA", "CAMAROES", "PORTUGAL", "GANE", "URUGUAI"]
+const palavras = ["CATAR", "EQUADOR", "SENEGAL", "HOLANDA", "INGLATERRA", "IRA", "GALES", "ARGENTINA", "MEXICO", "POLONIA", "FRANCA", "AUSTRALIA", "DINAMARCA", "TUNISIA", "ESPANHA", "ALEMANHA", "JAPAO", "BELGICA", "CANADA", "MARROCOS", "CROACIA", "BRASIL", "SERVIA", "SUICA", "CAMAROES", "PORTUGAL", "GANE", "URUGUAI"]
 const textarea = document.querySelector('textarea')
 const buttons = document.querySelectorAll('.btn')
 const confirmarBto = document.querySelector('.confirmar')
 const deletarBto = document.querySelector('.deletar')
 const forcaImagem = document.querySelector('#forca')
+const bolaImagem = document.querySelector('#bola')
 let palavraForca;
 let tentativas = 1;
 let tmp = [];
@@ -25,7 +26,9 @@ confirmarBto.addEventListener('click', () => {
     textarea.value = ''
 })
 
-selecionaSelecao();
+onload = function () {
+    selecionaSelecao();
+}
 
 function selecionaSelecao() {
     const indice = parseInt(Math.random() * palavras.length)
@@ -41,6 +44,7 @@ function verificaLetra(letra) {
     document.getElementById(letra).disabled = true;
     if (palavraForca.includes(letra)) {
         document.getElementById(letra).style.background = "#32CD32";
+        bolaImagem.setAttribute('src','img/bola'+1+'.png')
         for (i = 0; i < palavraForca.length; i++) {
             if (palavraForca[i] == letra) {
                 tmp[i] = letra;
@@ -56,6 +60,7 @@ function verificaLetra(letra) {
 function verificaStatusGame() {
     tentativas++;
     forcaImagem.setAttribute('src','img/forca'+tentativas+'.png')
+    bolaImagem.setAttribute('src','img/bola'+2+'.png')
     if (tentativas == 9) {
         var resposta = confirm("Infelizmente, você perdeu =(\nOK - JOGAR NOVAMENTE | CANCELAR - SAIR DO JOGO")
         if (resposta) {
